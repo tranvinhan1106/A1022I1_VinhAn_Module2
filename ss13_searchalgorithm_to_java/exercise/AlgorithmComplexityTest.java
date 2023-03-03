@@ -1,4 +1,4 @@
-package ss12_searchalgorithm_to_java.exercise;
+package ss13_searchalgorithm_to_java.exercise;
 
 import java.util.Scanner;
 

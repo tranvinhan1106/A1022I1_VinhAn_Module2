@@ -9,8 +9,8 @@ import java.util.List;
 public class ProductServiceImpl implements IProductService{
     private IProductRepository repository = new ProductRepositoryImpl();
     @Override
-    public void setProduct(int id ,String productName){
-        repository.setProduct(id,productName);
+    public void setProduct(int id ,String productName,long productPrice){
+        repository.setProduct(id,productName,productPrice);
     }
     @Override
     public void removeProduct(int id){
@@ -34,7 +34,7 @@ public class ProductServiceImpl implements IProductService{
 
     @Override
     public void addProduct(Product product){
-        repository.sortDescending(product);
+        repository.addProduct(product);
     }
 
     @Override

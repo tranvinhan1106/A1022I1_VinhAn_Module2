@@ -7,7 +7,8 @@ import java.util.List;
 public interface IProductRepository {
     List<Product> findAll();
 
-    void setProduct(int id, String productName);
+
+    void setProduct(int id, String productName, long productPrice);
 
     Product removeProduct(int id);
 
@@ -19,5 +20,4 @@ public interface IProductRepository {
 
     void addProduct(Product product);
 
-    void sortDescending(Product product);
 }

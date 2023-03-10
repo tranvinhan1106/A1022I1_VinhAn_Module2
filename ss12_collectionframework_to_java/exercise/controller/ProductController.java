@@ -12,7 +12,7 @@ public class ProductController {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int select = 0 ;
+        int select;
         do {
             System.out.println("-------Product Management------");
             System.out.println("1. Add new Product");
@@ -24,29 +24,30 @@ public class ProductController {
             System.out.println("7. Sort product Descending");
             System.out.println("8. Exit");
             System.out.print("Please input number: ");
-            select = Integer.parseInt(scanner.nextLine());
+            select = scanner.nextInt();
             switch (select){
                 case 1:
                     System.out.print("Input id: ");
-                    int id = Integer.parseInt(scanner.nextLine());
+                    int id = scanner.nextInt();
                     System.out.print("Input name product: ");
-                    String productName = scanner.nextLine();
+                    String productName = scanner.next();
                     System.out.print("Input price product");
-                    long productPrice =Long.parseLong(scanner.nextLine());
+                    long productPrice =scanner.nextLong();
                     Product product = new Product(id , productName , productPrice);
                     service.addProduct(product);
                     break;
                 case 2:
                     System.out.println("Input id:");
-                    id = Integer.parseInt(scanner.nextLine());
+                    id = scanner.nextInt();
                     System.out.print("Input name product: ");
-                    productName = scanner.nextLine();
-                    product = new Product(id, productName);
-                    service.setProduct(id, productName);
+                    productName = scanner.next();
+                    System.out.println("Input price :");
+                    long price =scanner.nextLong();
+                    service.setProduct(id, productName,price);
                     break;
                 case 3:
                     System.out.println("Input id :");
-                    id = Integer.parseInt(scanner.nextLine());
+                    id = scanner.nextInt();
                     service.removeProduct(id);
                     break;
                 case 4:
@@ -65,6 +66,7 @@ public class ProductController {
                     break;
                 case 7:
                     service.sortDescending();
+                    break;
                 case 8:
                     System.exit(0);
             }

@@ -22,10 +22,11 @@ public  class ProductRepositoryImpl implements IProductRepository {
     }
 
     @Override
-    public void setProduct(int id, String productName) {
+    public void setProduct(int id, String productName, long productPrice) {
         for (Product product : productList) {
-            if (product.getId() == id) {
+            if (id == product.getId()) {
                 product.setProductName(productName);
+                product.setProductPrice(productPrice);
                 return;
             }
         }
@@ -58,17 +59,14 @@ public  class ProductRepositoryImpl implements IProductRepository {
 
     @Override
     public void sortDescending() {
-        Collections.sort(productList,Comparator.comparing(Product::getProductPrice));
-    }
-
-    @Override
-    public void sortDescending(Product product){
         Comparator<Product> comparator = Comparator.comparing(Product::getProductPrice);
         Collections.sort(productList,comparator.reversed());
     }
+
+
    @Override
    public void addProduct(Product product){
-        productList.add(product) ;
+       productList.add(product);
    }
 }
 

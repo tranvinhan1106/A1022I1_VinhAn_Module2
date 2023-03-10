@@ -5,7 +5,7 @@ import ss12_collectionframework_to_java.exercise.model.Product;
 import java.util.List;
 
 public interface IProductService {
-    void setProduct(int id, String productName);
+    void setProduct(int id, String productName,long productPrice);
 
     void removeProduct(int id);
 

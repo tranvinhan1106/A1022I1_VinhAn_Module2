@@ -1,4 +1,4 @@
-package ss16_IO_TextFile_to_java.exercise;
+package ss16_IO_TextFile_to_java.exercise.exercise_1;
 
 public class Country {
     private String id ;
